@@ -2,6 +2,8 @@ module Common
 
 open System.Collections.Generic
 
+let readLines filePath = System.IO.File.ReadLines(filePath)
+
 let sqrti n = sqrt (float n) |> int32
 
 let filterComposites (sieve: bool array) =
@@ -11,7 +13,7 @@ let filterComposites (sieve: bool array) =
   Seq.toList primes
 
 let primes_to n = 
-  let sieve = [|for _ in 0 .. (n+1) -> true|]
+  let sieve = [|for _ in 0 .. n -> true|]
   for i in 2 .. (sqrti n) do
     for j in i*i .. i .. n do
       sieve[j] <- false

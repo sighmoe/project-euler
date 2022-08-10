@@ -1,3 +1,4 @@
+// credit to this neat little property for a closed form solution: https://planetmath.org/squareofsum
 let sum_square_diff n =
   let mutable res = 0
   for j in 1 .. n do
